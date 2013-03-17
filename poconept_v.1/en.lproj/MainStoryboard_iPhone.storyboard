@@ -71,7 +71,7 @@
                                     <outlet property="moduleImageView" destination="dDN-PI-KSa" id="2px-Bc-gFl"/>
                                     <outlet property="moduleTextView" destination="SnL-cU-Jov" id="cMT-qL-ASh"/>
                                     <outlet property="moduleTitleLabel" destination="jDG-fd-XKJ" id="Gdk-n2-pRO"/>
-                                    <segue destination="21" kind="push" identifier="showDetail" id="jZb-fq-zAk"/>
+                                    <segue destination="teF-WJ-qrf" kind="push" identifier="showDetail" id="wIs-E7-0N0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -92,11 +92,14 @@
             <objects>
                 <viewController storyboardIdentifier="" title="Detail" id="21" customClass="DetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="22">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="27">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="dA2-Q2-Ap3"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" size="system"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -104,9 +107,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="27" firstAttribute="centerY" secondItem="22" secondAttribute="centerY" type="default" id="7cE-gL-0wv"/>
-                            <constraint firstItem="27" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="R0m-z7-TWk"/>
-                            <constraint firstAttribute="trailing" secondItem="27" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="pRe-qY-58T"/>
+                            <constraint firstItem="27" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="21" id="niy-Rc-cDR"/>
+                            <constraint firstItem="27" firstAttribute="top" secondItem="22" secondAttribute="top" constant="244" id="v9r-pl-49k"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="26"/>
@@ -116,12 +118,100 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="902" y="64"/>
+            <point key="canvasLocation" x="930" y="696"/>
+        </scene>
+        <!--View Controller - Audio-->
+        <scene sceneID="qYY-aw-rQK">
+            <objects>
+                <viewController id="Xtv-vc-bbU" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wda-Vh-aGM">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Audio" id="vDB-YR-Nng"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rH8-25-BVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1892" y="-1"/>
+        </scene>
+        <!--View Controller - Reading-->
+        <scene sceneID="GdQ-c0-kxa">
+            <objects>
+                <viewController id="w2s-wy-0AP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yi3-Mq-sHy">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Reading" id="kDT-88-RSC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GVS-dO-uqn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1900" y="690"/>
+        </scene>
+        <!--View Controller - Video-->
+        <scene sceneID="449-IA-tVo">
+            <objects>
+                <viewController id="MdC-nJ-xZB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Qf-w0-lON">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Video" id="Rgw-4Q-sA3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="28K-mF-xbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1892" y="-654"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="gL4-wV-45Y">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="teF-WJ-qrf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="d1b-td-G4W"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="0Hf-OA-uST">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="MdC-nJ-xZB" kind="relationship" relationship="viewControllers" id="A2p-67-ypi"/>
+                        <segue destination="Xtv-vc-bbU" kind="relationship" relationship="viewControllers" id="rcX-SK-cjn"/>
+                        <segue destination="w2s-wy-0AP" kind="relationship" relationship="viewControllers" id="3Xr-dF-06h"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sag-oO-7re" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1046" y="-123"/>
         </scene>
     </scenes>
     <resources>
         <image name="default_module_image.png" width="150" height="110"/>
     </resources>
+    <classes>
+        <class className="DetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
+        </class>
+        <class className="ModuleCustomCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ModuleCustomCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="moduleImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="moduleTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="moduleTitleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
