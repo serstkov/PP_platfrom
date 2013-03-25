@@ -30,6 +30,7 @@
 		6E0007CF16F3D6EF00E2472A /* poconept_v_1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0007CE16F3D6EF00E2472A /* poconept_v_1Tests.m */; };
 		6E0007DA16F3DF7600E2472A /* default_module_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E0007D916F3DF7600E2472A /* default_module_image.png */; };
 		6E0007DD16F3E0D700E2472A /* ModuleCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0007DC16F3E0D700E2472A /* ModuleCustomCell.m */; };
+		6E0D6F7E1700F12800D578F4 /* Module.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D6F7D1700F12800D578F4 /* Module.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		6E0007D916F3DF7600E2472A /* default_module_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = default_module_image.png; path = Images/default_module_image.png; sourceTree = "<group>"; };
 		6E0007DB16F3E0D700E2472A /* ModuleCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleCustomCell.h; sourceTree = "<group>"; };
 		6E0007DC16F3E0D700E2472A /* ModuleCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleCustomCell.m; sourceTree = "<group>"; };
+		6E0D6F7C1700F12800D578F4 /* Module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Module.h; path = Model/Module.h; sourceTree = "<group>"; };
+		6E0D6F7D1700F12800D578F4 /* Module.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Module.m; path = Model/Module.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +149,7 @@
 				6E0007B716F3D6EE00E2472A /* DetailViewController.h */,
 				6E0007B816F3D6EE00E2472A /* DetailViewController.m */,
 				6E0007B116F3D6EE00E2472A /* poconept_v_1.xcdatamodeld */,
+				6E0D6F7B1700EE8300D578F4 /* Model */,
 				6E00079A16F3D6EE00E2472A /* Supporting Files */,
 			);
 			path = poconept_v.1;
@@ -199,6 +203,15 @@
 				6E0007DC16F3E0D700E2472A /* ModuleCustomCell.m */,
 			);
 			name = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		6E0D6F7B1700EE8300D578F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6E0D6F7C1700F12800D578F4 /* Module.h */,
+				6E0D6F7D1700F12800D578F4 /* Module.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +332,7 @@
 				6E0007B616F3D6EE00E2472A /* MasterViewController.m in Sources */,
 				6E0007B916F3D6EE00E2472A /* DetailViewController.m in Sources */,
 				6E0007DD16F3E0D700E2472A /* ModuleCustomCell.m in Sources */,
+				6E0D6F7E1700F12800D578F4 /* Module.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +523,7 @@
 				6E0007D416F3D6EF00E2472A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E0007D516F3D6EF00E2472A /* Build configuration list for PBXNativeTarget "poconept_v.1Tests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +532,7 @@
 				6E0007D716F3D6EF00E2472A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
