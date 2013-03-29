@@ -11,6 +11,8 @@
 #import "DetailViewController.h"
 
 @interface MasterViewController ()
+@property (nonatomic, retain) NSMutableData *receivedData;
+
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
@@ -34,6 +36,67 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    
+    //letst test our post request method
+    [self getDataFromServer];
+}
+
+-(BOOL)getDataFromServer
+{
+    BOOL success;
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://www.kamilegreen.com/json/JSON_Feed_v.1.php"]];
+    
+    [request setHTTPMethod:@"POST"];
+
+    
+    NSDictionary *tmp = [[NSDictionary alloc] initWithObjectsAndKeys:
+                         @"here we are value", @"testValue",
+                         nil];
+    NSError *error;
+    NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:0 error:&error];
+    [request setHTTPBody:postdata];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    if(connection)
+        success = YES;
+    else
+        success = NO;
+    
+    return success;
+}
+
+/*
+ this method might be calling more than one times according to incoming data size
+ */
+-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
+    [self.receivedData appendData:data];
+}
+/*
+ if there is an error occured, this method will be called by connection
+ */
+-(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
+    
+    NSLog(@"%@" , error);
+}
+
+/*
+ if data is successfully received, this method will be called by connection
+ */
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection{
+    
+    //initialize convert the received data to string with UTF8 encoding
+    NSString *htmlSTR = [[NSString alloc] initWithData:self.receivedData
+                                              encoding:NSUTF8StringEncoding];
+    NSLog(@"%@" , htmlSTR);
+    //initialize a new webviewcontroller
+
+    
+    
+    
+
 }
 
 - (void)didReceiveMemoryWarning
